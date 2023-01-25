@@ -1,4 +1,6 @@
-## Data Sample and Schema
+Proposal
+
+We would like to create a website that brings together a community of wine enthusiast and collectors alike. A place to expand your wine collection and pallets, while tracking your personal wine inventory.
 
 I am favoring an certain type of wine but I would like to expand my collection and pallet
 
@@ -13,52 +15,35 @@ using Node.Js
 ```json
 [
   {
-    "name": "Full-stack Web Development",
-    "description": "This is a full-stack web development class.",
-    "teacher": {
+    "usertype": "Collector",
+    "user": {
       "name": "Elias",
-      "email": "elias@claimacademystl.com"
+      "email": "elias@claimacademystl.com",
       "password": "password"
     },
-    "students": [
+    "Collection": [
       {
-        "name": "John Doe",
-        "attendance": [
-          {
-            "date": "2020-01-01",
-            "present": "Left Early"
-          },
-          {
-            "date": "2020-01-02",
-            "present": "Present"
-          }
-        ]
+        "varietal": "Pinot Noir",
+        "brand": "yellow tail",
+        "taste": "cherry chocalate",
+        "country/state": "Australia",
+        "body": "medium-bodied",
+        "winetype": "red wine"
       },
       {
-        "name": "Jane Doe",
-        "attendance": [
-          {
-            "date": "2020-01-01",
-            "present": "Late"
-          },
-          {
-            "date": "2020-01-02",
-            "present": "Excused Absence"
-          }
-        ]
-      },
+        "varietal": "Cabernet Sauvigon",
+        "brand": "Josh Cellars",
+        "taste": "Black Cherry, Plum, Vanilla",
+        "country/state": "California",
+        "body": "medium-bodied",
+        "winetype": "red wine"
+      }
+    ],
+    "Your Orders": [
       {
-        "name": "Jim Doe",
-        "attendance": [
-          {
-            "date": "2020-01-01",
-            "present": "Late"
-          },
-          {
-            "date": "2020-01-02",
-            "present": "Unexcused Absence"
-          }
-        ]
+        "Order#1": "Pinot Noir",
+        "Quantity": "1 bottle",
+        "Date Purchased": "1-24-2023"
       }
     ]
   }
@@ -75,56 +60,81 @@ using Node.Js
     },
     {
       "name": "Manav",
-      "email: "manavm@visionwebsoft.com",
-      "password: "JSisAwesome"
+      "email" : "manavm@visionwebsoft.com",
+      "password" : "JSisAwesome"
       }
 ]
 ```
 
+Table/Model:
+Users:
+-name
+-email
+-password
+-orders: [orderIds]
+-collections:[wineId]
+
+Table/Model:
+Wines:
+id:
+taste
+price
+brand
+name
+
+Table/Model:
+Orders:
+Id
+products:
+date:
+
 ### Mongoose Schema
 
 ````js
-const AttendanceSchema = new mongoose.Schema({
-  date: { type: String, required: true },
-  present: { type: String, required: true }
+const wineCollection = new wineType.Schema({
+  wine: { type: red wine , varietal: Pinot Noir,
+        brand: yellow tail,
+        taste: cherry chacolate,
+        country: Austrila,
+        body: medium-bodied,
+        winetype: red wine },
 });
 
-const StudentSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  attendance: [AttendanceSchema]
+const wineCollection = new wineType.Schema({
+  wine: { varietal: Cabernet Sauvigon,
+        brand: Josh Cellars,
+        taste: Black Cherry, Plum, Vanilla,
+        country/state: California,
+        body: medium-bodied,
+        winetype: red wine,
 });
 
-const TeacherSchema = new mongoose.Schema({
+const UserSchema = new user.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
 });
 
-const ClassSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  description: { type: String, required: true },
-  teacher: TeacherSchema,
-  students: [StudentSchema]
+const yourOrder = new orders.Schema({
+  name: { Brand: Yellow Tail, varietal: Pinot Noir },
+  date: { purchsedOn: 1-24-2003 }
 });```
 
 ## MVP API Endpoints
 
 ### 🧑‍🏫
 
-- [ ] `POST /api/teacher/login` - Login a teacher
-- [ ] `POST /api/teacher/logout` - Logout a teacher
-- [ ] `POST /api/teacher/register` - Register a teacher (admin only)
-- [ ] `GET /api/teacher` - Get all teachers (admin only)
-- [ ] `PUT /api/teacher/:teacherId` - Update a teacher (teacher updates their own, admin updates any)
-- [ ] `DELETE /api/teacher/:teacherId` - Delete a teacher (admin only)
+- [ ] `POST /api/collector/login` - Login a collector
+- [ ] `POST /api/collector/logout` - Logout a collector
+- [ ] `POST /api/collector/register` - Register a collector (admin only)
+- [ ] `GET /api/collector` - Get all collectors (admin only)
+- [ ] `GET /api/wine/` - Get wine
+- [ ] `GET /api/collector/profile/` - get all currently logged in users data
+- [ ] `PUT /api/collector/:collectorId` - Update a collector (collector updates their own, admin updates any)
+- [ ] `DELETE /api/collecotr/:collectorId` - Delete a collector (admin only)
 
-### Classes 🧑‍🎓
 
-- [ ] `GET /api/classes` - Get all classes. Admin gets all. Teacher gets only their classes.
-- [ ] `POST /api/classes` - Create a class (admin only)
-- [ ] `PUT /api/classes/:classId` - Update a class (admin only). We can add students, teachers, updated the name and description. We can also update attendance.
-- [ ] `DELETE /api/classes/:classId` - Delete a class (admin only)
-This is using MongoDB, so not at all useful from that POV, but you can use MySQL workbench to design your schema and include the diagram.
+
 
 
 
