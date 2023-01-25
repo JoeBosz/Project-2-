@@ -1,39 +1,134 @@
-# Node Starter
+## Data Sample and Schema
 
-## TLDR
+I am favoring an certain type of wine but I would like to expand my collection and pallet
 
-Use of this starter template assumes that you have a 'complete dev environment' setup - a terminal, Node, VS Code, at least. If not, you may want to [start here.](https://www.notion.so/codefinity/Setting-up-a-Local-Dev-Environment-for-JS-02a4e9f4a30043d3a8e7d109be3448f4)
+We have any collection . Collectors can search and add!
 
-1. Click that big green button to start using it.
-2. `clone` your new repo from your GitHub to your local computer
-3. `cd` into the `clone`d repo and enter: `npm i`.
-4. `npm start`
+using Node.Js
 
-## Some of What's Included
+### Sample Data
 
-- [ESLint](https://eslint.org/) with the _Standard_ JS style guide.
-- [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-- Various VS Code 'settings' and 'extensions.' Look in the bottom right when you open this up in VS Code to install them. The settings are responsible for auto-formatting on save (among other things), and the extensions are responsible for the auto-formatting.
-- [Vitest](https://vitest.dev/) for testing. Just do `npm test` or `npm t`.
+#### Class Collection
 
-## Dependency Graph
+```json
+[
+  {
+    "name": "Full-stack Web Development",
+    "description": "This is a full-stack web development class.",
+    "teacher": {
+      "name": "Elias",
+      "email": "elias@claimacademystl.com"
+      "password": "password"
+    },
+    "students": [
+      {
+        "name": "John Doe",
+        "attendance": [
+          {
+            "date": "2020-01-01",
+            "present": "Left Early"
+          },
+          {
+            "date": "2020-01-02",
+            "present": "Present"
+          }
+        ]
+      },
+      {
+        "name": "Jane Doe",
+        "attendance": [
+          {
+            "date": "2020-01-01",
+            "present": "Late"
+          },
+          {
+            "date": "2020-01-02",
+            "present": "Excused Absence"
+          }
+        ]
+      },
+      {
+        "name": "Jim Doe",
+        "attendance": [
+          {
+            "date": "2020-01-01",
+            "present": "Late"
+          },
+          {
+            "date": "2020-01-02",
+            "present": "Unexcused Absence"
+          }
+        ]
+      }
+    ]
+  }
+]
+```
 
-`npm run dep-graph`
+#### Teachers Collection
 
-This project includes "dependency-cruiser". You can generate a dependency graph by running npm run dep-graph. This will be in SVG format by default. You can change this in the package.json file.
+```json
+[{
+      "name": "Elias",
+      "email": "elias@claimacademystl.com"
+      "password": "password"
+    },
+    {
+      "name": "Manav",
+      "email: "manavm@visionwebsoft.com",
+      "password: "JSisAwesome"
+      }
+]
+```
 
-Note: You must have Graphviz installed for this to work. You can install it using Homebrew on macOS with brew install graphviz.
+### Mongoose Schema
 
-Here's an example of what the dependency graph looks like:
+````js
+const AttendanceSchema = new mongoose.Schema({
+  date: { type: String, required: true },
+  present: { type: String, required: true }
+});
 
-![Dependency Graph](./dependency-graph.svg)
+const StudentSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  attendance: [AttendanceSchema]
+});
 
-## How To Use
+const TeacherSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true },
+});
 
-Run `npm i` to get all the things installed.
+const ClassSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  description: { type: String, required: true },
+  teacher: TeacherSchema,
+  students: [StudentSchema]
+});```
 
-`npm start` will watch the `app` directory for any changes using `nodemon`
+## MVP API Endpoints
 
-## Other Notes
+### 🧑‍🏫
 
-To use the new experimental `fetch` that's now in Node, just add: `/* global fetch */` to the top of your file. This will appease ESLint.
+- [ ] `POST /api/teacher/login` - Login a teacher
+- [ ] `POST /api/teacher/logout` - Logout a teacher
+- [ ] `POST /api/teacher/register` - Register a teacher (admin only)
+- [ ] `GET /api/teacher` - Get all teachers (admin only)
+- [ ] `PUT /api/teacher/:teacherId` - Update a teacher (teacher updates their own, admin updates any)
+- [ ] `DELETE /api/teacher/:teacherId` - Delete a teacher (admin only)
+
+### Classes 🧑‍🎓
+
+- [ ] `GET /api/classes` - Get all classes. Admin gets all. Teacher gets only their classes.
+- [ ] `POST /api/classes` - Create a class (admin only)
+- [ ] `PUT /api/classes/:classId` - Update a class (admin only). We can add students, teachers, updated the name and description. We can also update attendance.
+- [ ] `DELETE /api/classes/:classId` - Delete a class (admin only)
+This is using MongoDB, so not at all useful from that POV, but you can use MySQL workbench to design your schema and include the diagram.
+
+
+
+
+
+
+````
