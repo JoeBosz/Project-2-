@@ -75,18 +75,18 @@ Users:
 -collections:[wineId]
 
 Table/Model:
-Wines:
-id:
-taste
-price
-brand
-name
+-Wines:
+-id:
+-taste
+-price
+-brand
+-name
 
 Table/Model:
-Orders:
-Id
-products:
-date:
+-Orders:
+-Id
+-products:
+-date:
 
 ### Mongoose Schema
 
