@@ -32,7 +32,7 @@ const wine = sequelize.define(
     wineId: {
       type: DataTypes.INTEGER,
       references: {
-        model: Driver,
+        model: wine,
         key: "id",
       },
     },
