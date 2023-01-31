@@ -75,8 +75,8 @@ Users:
 -collections:[wineId]
 
 Table/Model:
--Wines:
--id:
+Wines:
+-id
 -taste
 -price
 -brand
