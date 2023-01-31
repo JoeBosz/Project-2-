@@ -1,6 +1,4 @@
-import { DataTypes } from "sequelize";
 import sequelize from "../conn.js";
-import Users from "../users/model.js";
 
 const wine = sequelize.define(
   "wine",
