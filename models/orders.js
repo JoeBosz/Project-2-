@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Orders extends Model {}
+class orders extends Model {}
 
 Orders.init(
   {
-    order ID: {
+    order_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -18,12 +18,12 @@ Orders.init(
     description: {
       type: DataTypes.STRING,
     },
-    date ordered: {
+    date_ordered: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    arrival time: {
+    arrival_time: {
       type: DataTypes.FLOAT,
       allowNull: false,
     },
@@ -38,4 +38,4 @@ Orders.init(
   }
 );
 
-module.exports = Orders;
+module.exports = orders;
