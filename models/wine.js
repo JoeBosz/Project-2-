@@ -44,4 +44,4 @@ const wine = sequelize.define(
   }
 );
 
-export default Car;
+export default wine;
