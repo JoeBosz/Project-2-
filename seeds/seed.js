@@ -11,9 +11,14 @@ const seedAll = async () => {
     individualHooks: true,
     returning: true,
   });
-  await Wines.bulkCreate(seedsWines);
+  await Wines.bulkCreate(seedWines);
   await Orders.bulkCreate(seedOrders);
 
 }
 
 seedAll();
+
+
+
+
+
