@@ -10,6 +10,16 @@ class User extends Model {
 
 User.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    user: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -29,17 +39,23 @@ User.init(
         len: [8],
       },
     },
-    orderId: {
-      type: DataTypes.INTEGER,
+    address: {
+      type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+    },
+    zipcode: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     wineId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+    },
+    orderId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
     },
   },
 
@@ -57,12 +73,13 @@ User.init(
         return updatedUserData;
       },
     },
+
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "User",
   }
 );
 
-module.exports = user;
+module.exports = User;

@@ -1,9 +1,9 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class orders extends Model {}
+class Order extends Model {}
 
-Orders.init(
+Order.init(
   {
     order_id: {
       type: DataTypes.INTEGER,
@@ -24,18 +24,17 @@ Orders.init(
       defaultValue: DataTypes.NOW,
     },
     arrival_time: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DATE,
       allowNull: false,
     },
-
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'orders',
+    modelName: "Order",
   }
 );
 
-module.exports = orders;
+module.exports = Order;

@@ -4,39 +4,39 @@
     "name": "Joe boz",
     "email": "joeboz@hotmail.com",
     "password": "password12345",
-    "adress": "1234",
+    "address": "1234",
     "zipcode": "63125",
-    "wineId": wine[1],
-    "orderId": order[1]
+    "wineId": 1,
+    "orderId": 1
   },
   {
     "user": "Buyer",
     "name": "Tony Dan",
     "email": "tonydan@hotmail.com",
     "password": "password12346",
-    "adress": "1235",
+    "address": "1235",
     "zipcode": "63126",
-    "wineId": wine[2],
-    "orderId": order[2]
+    "wineId": 2,
+    "orderId": 2
   },
   {
     "user": "Seller",
     "name": "John rob",
     "email": "johnrob@hotmail.com",
     "password": "password12347",
-    "adress": "1236",
+    "address": "1236",
     "zipcode": "63127",
-    "wineId": wine[3],
-    "orderId": order[3]
+    "wineId": 3,
+    "orderId": 3
   },
   {
     "user": "Collector",
     "name": "Tony Mai",
     "email": "tonymai@hotmail.com",
     "password": "password12348",
-    "adress": "1238",
+    "address": "1238",
     "zipcode": "63128",
-    "wineId": wine[4],
-    "orderId": order[4]
+    "wineId": 4,
+    "orderId": 4
   }
 ]

@@ -1,0 +1,30 @@
+[
+  {
+    "order_id": 1,
+    "name": "Guy Mousset Cotes Du Rhone Rose",
+    "description": "Grenache",
+    "date_ordered": "2023-05-01",
+    "arrival_time": "2023-05-03"
+  },
+  {
+    "order_id": 2,
+    "name": "Carmen Gran Reserva Cabernet Sauvignon, 2020",
+    "description": "Cabernet Sauvignon",
+    "date_ordered": "2023-05-01",
+    "arrival_time": "2023-05-03"
+  },
+  {
+    "order_id": 3,
+    "name": "Post Summit Chardonnay Arroyo Seco, 2019",
+    "description": "Chardonnay",
+    "date_ordered": "2023-05-01",
+    "arrival_time": "2023-05-03"
+  },
+  {
+    "order_id": 4,
+    "name": "De Margerie Grand Cru Brut Champagne",
+    "description": "Champagne",
+    "date_ordered": "2023-05-01",
+    "arrival_time": "2023-05-03"
+  }
+]

@@ -1,9 +1,16 @@
-import sequelize from "../conn.js";
+const sequelize = require("../config/connection.js");
+const { DataTypes } = require("sequelize");
 
-const wine = sequelize.define(
-  "wine",
+const Wine = sequelize.define(
+  "Wine",
   {
-    varietal: {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -12,34 +19,21 @@ const wine = sequelize.define(
       allowNull: false,
     },
     taste: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0,
-    },
-    country: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    body: {
-      type: DataTypes.STRING,
+    price: {
+      type: DataTypes.FLOAT,
       allowNull: false,
-    },
-    type: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    wineId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: Driver,
-        key: "id",
-      },
     },
   },
   {
     sequelize,
     timestamps: false,
+    freezeTableName: true,
     underscored: true,
+    modelName: "Wine",
   }
 );
 
-export default wine;
+module.exports = Wine;
