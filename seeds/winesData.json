@@ -5,7 +5,6 @@
     "name": "Guy Mousset Cotes Du Rhone Rose",
     "taste": "Strawberry, Cherry",
     "price": "$11.99"
-
   },
   {
     "wineId": 3,
@@ -13,8 +12,6 @@
     "name": "Carmen Gran Reserva Cabernet Sauvignon, 2020",
     "taste": "Black Currant, Blackberry, Spice",
     "price": "$14.99"
-
-
   },
   {
     "wineId": 5,
