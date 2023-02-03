@@ -4,7 +4,7 @@
     "name": "Joe boz",
     "email": "joeboz@hotmail.com",
     "password": "password12345",
-    "adress": "1234",
+    "address": "1234",
     "zipcode": "63125",
     "wineId": 1,
     "orderId": 1
@@ -14,7 +14,7 @@
     "name": "Tony Dan",
     "email": "tonydan@hotmail.com",
     "password": "password12346",
-    "adress": "1235",
+    "address": "1235",
     "zipcode": "63126",
     "wineId": 2,
     "orderId": 2
@@ -24,7 +24,7 @@
     "name": "John rob",
     "email": "johnrob@hotmail.com",
     "password": "password12347",
-    "adress": "1236",
+    "address": "1236",
     "zipcode": "63127",
     "wineId": 3,
     "orderId": 3
@@ -34,7 +34,7 @@
     "name": "Tony Mai",
     "email": "tonymai@hotmail.com",
     "password": "password12348",
-    "adress": "1238",
+    "address": "1238",
     "zipcode": "63128",
     "wineId": 4,
     "orderId": 4
