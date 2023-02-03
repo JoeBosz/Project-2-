@@ -1,19 +1,25 @@
-const sequelize = require('../config/connection');
-const seedUsers = require('./usersData.json');
-const seedsWines = require('./winesData.json');
-const seedOrders = require('./orders.json');
+import sequelize = from '../config/connection'
+import seedUsers = from './usersData.json'
+import seedsWines = from './winesData.json'
+import seedOrders = from './orders.json'
 
-const { Users, Wines, Orders } = require('../models');
+import sequelize = from '../config/connection'
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-  await User.bulkCreate(seedUsers, {
-    individualHooks: true,
-    returning: true,
-  });
-  await Wines.bulkCreate(seedsWines);
-  await Orders.bulkCreate(seedOrders);
+  console.log('\n----- DATABASE SYNCED -----\n');
+  await seedUsers();
+  console.log('\n----- USERS SEEDED -----\n');
 
-}
+  await seedsWines();
+  console.log('\n----- WINES SEEDED -----\n');
+
+  await seedOrders();
+  console.log('\n----- ORDERS SEEDED -----\n');
+
+  process.exit(0);
+};
 
 seedAll();
+
+
