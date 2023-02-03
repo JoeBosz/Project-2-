@@ -1,36 +1,39 @@
 const sequelize = require("../config/connection.js");
-const { Model, DataTypes } = require("sequelize");
-const bcrypt = require("bcrypt");
+const { DataTypes } = require("sequelize");
 
-const wine = sequelize.define("wine", {
-  id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true,
+const Wine = sequelize.define(
+  "Wine",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    brand: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    taste: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    price: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
   },
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  brand: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  taste: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  price: {
-    type: DataTypes.FLOAT,
-    allowNull: false,
-  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "Wine",
+  }
+);
 
-  sequelize,
-  timestamps: false,
-  freezeTableName: true,
-  underscored: true,
-  modelName: "wine",
-});
-
-module.exports = wine;
+module.exports = Wine;
