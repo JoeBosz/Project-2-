@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "name": "Guy Mousset Cotes Du Rhone Rose",
     "taste": "Strawberry, Cherry",
     "price": "$11.99",
@@ -32,3 +33,33 @@
     "wineId": wine[4],
   }
 ]
+=======
+    "wineId": 1,
+    "brand": "Guy Mousset",
+    "name": "Guy Mousset Cotes Du Rhone Rose",
+    "taste": "Strawberry, Cherry",
+    "price": "$11.99"
+  },
+  {
+    "wineId": 3,
+    "brand": "Carmen",
+    "name": "Carmen Gran Reserva Cabernet Sauvignon, 2020",
+    "taste": "Black Currant, Blackberry, Spice",
+    "price": "$14.99"
+  },
+  {
+    "wineId": 5,
+    "brand": "Post Summit",
+    "name": "Post Summit Chardonnay Arroyo Seco, 2019",
+    "taste": "Pear, Lemon, Toast",
+    "price": "$19.99"
+  },
+  {
+    "wineId": 7,
+    "brand": "De Margerie",
+    "name": "De Margerie Grand Cru Brut Champagne",
+    "taste": "Cherry, Berry, Toast",
+    "price": "$52.99"
+  }
+]
+>>>>>>> 883b7e420f73831a08187b9f5a0a22af59ede5db
