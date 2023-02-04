@@ -5,7 +5,7 @@ const withAuth = require("../utils/auth");
 router.get("/", async (req, res) => {
   try {
     // Get all wines and JOIN with user data
-    const wineData = await project.findAll({
+    const wineData = await Wine.findAll({
       include: [
         {
           model: User,
@@ -15,11 +15,11 @@ router.get("/", async (req, res) => {
     });
 
     // converting data so the template can read it
-    const wine = wineData.map((project) => wine.get({ plain: true }));
+    const wines = wineData.map((wine) => wine.get({ plain: true }));
 
     // Pass data and session into template
     res.render("homepage", {
-      wine,
+      wines,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
