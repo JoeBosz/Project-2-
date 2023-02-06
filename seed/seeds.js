@@ -1,7 +1,7 @@
 const sequelize = require("../config/connection");
 const seedUsers = require("./usersData.json");
 const seedsWines = require("./winesData.json");
-const seedOrders = require("./ordersData.json");
+// const seedOrders = require("./ordersData.json");
 
 const { User, Wine, Order } = require("../models");
 console.log(Order, "Order");
@@ -12,7 +12,7 @@ const seedAll = async () => {
     returning: true,
   });
   await Wine.bulkCreate(seedsWines);
-  await Order.bulkCreate(seedOrders);
+  // await Order.bulkCreate(seedOrders);
 };
 
 seedAll();
