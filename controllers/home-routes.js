@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
     // Pass data and session into template
     res.render("homepage", {
       wines,
-      logged_in: req.session.logged_in,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -42,7 +42,7 @@ router.get("/wine/:id", async (req, res) => {
 
     res.render("wine", {
       ...wine,
-      logged_in: req.session.logged_in,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -59,10 +59,10 @@ router.get("/profile", withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+    console.log(user);
     res.render("profile", {
       ...user,
-      logged_in: true,
+      loggedIn: true,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -72,7 +72,7 @@ router.get("/profile", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
 
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect("/profile");
     return;
   }
