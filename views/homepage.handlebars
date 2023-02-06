@@ -1,3 +1,13 @@
-{{#each galleries as |gallery|}}
-{{> gallery-details}}
-{{/each}}
+{{#if loggedIn}}
+  <section class="wine">
+    <img src="/public/images/wine.png" />
+    <div class="Wine Details">
+      <h3></h3>
+      <p>By: </p>
+      <p>Exhibition open until</p>
+    </div>
+  </section>
+  <!-- Otherwise, provide a link to login -->
+{{else}}
+  <a href="/login">You must login first to view this painting</a>
+{{/if}}

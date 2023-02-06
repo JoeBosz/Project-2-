@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
 
 router.get("/wine/:id", async (req, res) => {
   try {
-    const projectData = await Wine.findByPk(req.params.id, {
+    const wineData = await Wine.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -38,7 +38,7 @@ router.get("/wine/:id", async (req, res) => {
       ],
     });
 
-    const wine = projectData.get({ plain: true });
+    const wine = wineData.get({ plain: true });
 
     res.render("wine", {
       ...wine,
