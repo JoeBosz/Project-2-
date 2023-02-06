@@ -1,6 +1,6 @@
 const User = require("./User");
 const Wine = require("./Wine");
-const Order = require("./Order");
+
 
 User.hasMany(Wine, {
   foreignKey: "user_id",
@@ -11,4 +11,4 @@ Wine.belongsTo(User, {
   foreignKey: "user_id",
 });
 
-module.exports = { User, Wine, Order };
+module.exports = { User, Wine };
