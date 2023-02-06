@@ -52,11 +52,7 @@ User.init(
       allowNull: false,
       primaryKey: true,
     },
-    orderId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-    },
+
   },
 
   {
